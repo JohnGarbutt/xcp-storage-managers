@@ -29,7 +29,7 @@ install: _xslib.so xslib.py snapwatchd
 	$(SWIG) -python $<
 
 _xslib.so: xslib.py xslib_wrap.o xslib.o
-	$(CC) $(CFLAGS) -shared xslib.o xslib_wrap.o $(XS_LIB) -o $@
+	$(CC) $(CFLAGS) -shared xslib.o xslib_wrap.o $(XS_LIB) -o $@ -fPIC
 
 .PHONY: clean
 clean:

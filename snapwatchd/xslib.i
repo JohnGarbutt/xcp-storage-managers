@@ -1,6 +1,6 @@
 %module xslib
 %{
-#include <xs.h>
+#include <xenstore.h>
 #include "xslib.h"
 %}
 
