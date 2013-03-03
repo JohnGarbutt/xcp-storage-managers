@@ -7,7 +7,7 @@ DESTDIR ?=
 
 PYTHON_INCLUDE ?= /usr/include/python2.4
 
-CFLAGS ?= -O2
+CFLAGS ?= -O2 -fPIC
 CFLAGS += -I$(PYTHON_INCLUDE) -I$(XS_INCLUDE)
 
 SWIG ?= swig
@@ -29,7 +29,7 @@ install: _xslib.so xslib.py snapwatchd
 	$(SWIG) -python $<
 
 _xslib.so: xslib.py xslib_wrap.o xslib.o
-	$(CC) $(CFLAGS) -shared xslib.o xslib_wrap.o $(XS_LIB) -o $@ -fPIC
+	$(CC) $(CFLAGS) -shared xslib.o xslib_wrap.o $(XS_LIB) -o $@
 
 .PHONY: clean
 clean:
