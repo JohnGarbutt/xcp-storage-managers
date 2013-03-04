@@ -14,7 +14,7 @@
 # Miscellaneous utility functions
 #
 
-import os, re, sys, popen2, subprocess
+import os, re, sys, subprocess
 import time, datetime
 import errno, socket
 import xml.dom.minidom
